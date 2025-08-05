@@ -1,11 +1,19 @@
 @import "tailwindcss";
+
+@font-face {
+  font-family: "Avenue";
+  src: url("/public/fonts/Rosaline.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Avenue", sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
-  background: radial-gradient(circle at center, #da9f9f 0%, #d8c7c7 70%);
+  background: radial-gradient(circle at center, #745b5b 0%, #f0f0f0 70%);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -14,7 +22,8 @@
 }
 
 h1 {
-  text-shadow: 0px 0px 10px rgb(73, 4, 105);
+  text-shadow: 0px 0px 10px rgb(193, 114, 201);
+  font-family: "Avenue", sans-serif;
   font-size: 15.2em;
   line-height: 1.1;
 }

@@ -1,5 +1,4 @@
 import { useState } from "react";
-import dayDateImg from "./assets/DayDate40.avif";
 
 function App() {
   return (
@@ -7,9 +6,9 @@ function App() {
       <main>
         <section className="relative h-screen overflow-hidden">
           <img
-            src={dayDateImg}
+            src="./public/img/DayDate40.v2.png"
             alt="hero"
-            className="absolute top-0 left-1/2 transform -translate-x-1/2 z-10 w-full max-w-md"
+            className="absolute top-0 left-1/2 transform -translate-x-1/2 z-10 max-w-md w-full"
           />
 
           <div className="relative z-0 flex flex-col items-center justify-center h-full px-4 text-center  ">
