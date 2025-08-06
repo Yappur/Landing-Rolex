@@ -1,90 +1,13 @@
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { watches } from "./data/watches";
+import Overlay from "./Components/Overlay";
 
 // Registrar el plugin de ScrollTrigger
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
-
-const watches = [
-  {
-    id: 1,
-    name: "Day-Date 40",
-    model: "CE-2024",
-    price: "$2,499",
-    image: "../public/img/DayDate/DayDate40.v2.png",
-    background:
-      " background: radial-gradient(circle at center, #745b5b 0%, #f0f0f0 70%);",
-    accent: "text-purple-400",
-    gallery: [
-      "../public/img/DayDate/rolex1-DayDate.png",
-      "../public/img/DayDate/rolex2-DayDate.png",
-      "../public/img/DayDate/rolex3-DayDate.png",
-      "../public/img/DayDate/rolex4-DayDate.png",
-    ],
-  },
-  {
-    id: 2,
-    name: "ROYAL MASTER",
-    model: "RM-GOLD",
-    price: "$4,999",
-    image: "/placeholder.svg?height=400&width=400&text=Gold+Watch+2",
-    background: "from-amber-900 via-yellow-800 to-amber-900",
-    accent: "text-yellow-400",
-    gallery: [
-      "../public/img/DayDate/rolex1-DayDate.png",
-      "../public/img/DayDate/rolex2-DayDate.png",
-      "../public/img/DayDate/rolex3-DayDate.png",
-      "../public/img/DayDate/rolex4-DayDate.png",
-    ],
-  },
-  {
-    id: 3,
-    name: "OCEAN DEEP",
-    model: "OD-BLUE",
-    price: "$3,299",
-    image: "/placeholder.svg?height=400&width=400&text=Blue+Watch+3",
-    background: "from-blue-900 via-cyan-900 to-blue-900",
-    accent: "text-cyan-400",
-    gallery: [
-      "../public/img/DayDate/rolex1-DayDate.png",
-      "../public/img/DayDate/rolex2-DayDate.png",
-      "../public/img/DayDate/rolex3-DayDate.png",
-      "../public/img/DayDate/rolex4-DayDate.png",
-    ],
-  },
-  {
-    id: 4,
-    name: "CARBON FORCE",
-    model: "CF-BLACK",
-    price: "$1,899",
-    image: "/placeholder.svg?height=400&width=400&text=Black+Watch+4",
-    background: "from-gray-900 via-red-900 to-gray-900",
-    accent: "text-red-400",
-    gallery: [
-      "../public/img/DayDate/rolex1-DayDate.png",
-      "../public/img/DayDate/rolex2-DayDate.png",
-      "../public/img/DayDate/rolex3-DayDate.png",
-      "../public/img/DayDate/rolex4-DayDate.png",
-    ],
-  },
-  {
-    id: 5,
-    name: "DIAMOND LUX",
-    model: "DL-PLATINUM",
-    price: "$8,999",
-    image: "/placeholder.svg?height=400&width=400&text=Diamond+Watch+5",
-    background: "from-indigo-900 via-pink-900 to-indigo-900",
-    accent: "text-pink-400",
-    gallery: [
-      "../public/img/DayDate/rolex1-DayDate.png",
-      "../public/img/DayDate/rolex2-DayDate.png",
-      "../public/img/DayDate/rolex3-DayDate.png",
-      "../public/img/DayDate/rolex4-DayDate.png",
-    ],
-  },
-];
 
 function App() {
   const [currentWatch, setCurrentWatch] = useState(0);
@@ -410,136 +333,12 @@ function App() {
         </div>
       </div>
 
-      {/* Indicadores de navegación */}
-      <div className="absolute right-8 top-1/2 transform -translate-y-1/2 space-y-4">
-        {watches.map((_, index) => (
-          <div
-            key={index}
-            className={`w-2 h-8 rounded-full transition-all duration-300 ${
-              index === currentWatch
-                ? `${currentWatchData.accent.replace(
-                    "text-",
-                    "bg-"
-                  )} opacity-100`
-                : "bg-white/30 opacity-50"
-            }`}
-          />
-        ))}
-      </div>
-
-      {/* Contador */}
-      <div className="absolute bottom-8 left-8 text-white">
-        <span className={`text-2xl font-bold ${currentWatchData.accent}`}>
-          {String(currentWatch + 1).padStart(2, "0")}
-        </span>
-        <span className="text-white/60 text-lg">
-          /{String(watches.length).padStart(2, "0")}
-        </span>
-      </div>
-
-      <a
-        href="https://www.linkedin.com/in/mateoyapur/"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="fixed bottom-6 right-6 z-50 group cursor-pointer"
-      >
-        <div className="relative">
-          {/* Efecto de brillo de fondo que se adapta al color actual */}
-          <div
-            className={`absolute inset-0 rounded-full blur-xl group-hover:blur-2xl transition-all duration-500 opacity-0 group-hover:opacity-100`}
-            style={{
-              background: `radial-gradient(circle, ${
-                currentWatchData.accent.includes("purple")
-                  ? "#8b5cf6"
-                  : currentWatchData.accent.includes("yellow")
-                  ? "#eab308"
-                  : currentWatchData.accent.includes("cyan")
-                  ? "#06b6d4"
-                  : currentWatchData.accent.includes("red")
-                  ? "#ef4444"
-                  : "#ec4899"
-              }20, transparent 70%)`,
-            }}
-          />
-
-          {/* Container principal */}
-          <div className="relative bg-black/20 backdrop-blur-md border border-white/20 rounded-full px-4 py-2 transition-all duration-300 hover:bg-black/30 hover:border-white/30 hover:scale-105">
-            <div className="flex items-center space-x-3">
-              {/* Ícono animado que cambia de color según el reloj actual */}
-              <div className="relative">
-                <div
-                  className={`text-lg font-mono animate-pulse ${currentWatchData.accent}`}
-                >
-                  &lt;&gt;
-                </div>
-                {/* Pequeño punto de brillo que también cambia de color */}
-                <div
-                  className={`absolute -top-1 -right-1 w-2 h-2 rounded-full animate-ping opacity-75`}
-                  style={{
-                    backgroundColor: currentWatchData.accent.includes("purple")
-                      ? "#8b5cf6"
-                      : currentWatchData.accent.includes("yellow")
-                      ? "#eab308"
-                      : currentWatchData.accent.includes("cyan")
-                      ? "#06b6d4"
-                      : currentWatchData.accent.includes("red")
-                      ? "#ef4444"
-                      : "#ec4899",
-                  }}
-                />
-              </div>
-
-              {/* Texto del nombre con gradiente adaptativo */}
-              <div className="text-white font-medium text-sm tracking-wide">
-                <span
-                  className="bg-clip-text text-transparent"
-                  style={{
-                    backgroundImage: `linear-gradient(to right, white, ${
-                      currentWatchData.accent.includes("purple")
-                        ? "#c4b5fd"
-                        : currentWatchData.accent.includes("yellow")
-                        ? "#fde047"
-                        : currentWatchData.accent.includes("cyan")
-                        ? "#67e8f9"
-                        : currentWatchData.accent.includes("red")
-                        ? "#fca5a5"
-                        : "#f9a8d4"
-                    })`,
-                  }}
-                >
-                  Mateo Yapur
-                </span>
-              </div>
-            </div>
-          </div>
-
-          {/* Efecto de onda al hover que también se adapta */}
-          <div
-            className="absolute inset-0 rounded-full border-2 opacity-0 group-hover:opacity-100 group-hover:animate-ping"
-            style={{
-              borderColor: `${
-                currentWatchData.accent.includes("purple")
-                  ? "#8b5cf6"
-                  : currentWatchData.accent.includes("yellow")
-                  ? "#eab308"
-                  : currentWatchData.accent.includes("cyan")
-                  ? "#06b6d4"
-                  : currentWatchData.accent.includes("red")
-                  ? "#ef4444"
-                  : "#ec4899"
-              }80`,
-            }}
-          />
-        </div>
-      </a>
-
-      {/* Logo */}
-      <div className="absolute top-8 left-8 text-white">
-        <h2 className="text-2xl font-bold tracking-wider">CHRONOS</h2>
-        <p className="text-xs text-white/60 tracking-widest">
-          LUXURY TIMEPIECES
-        </p>
-      </div>
+      <Overlay
+        currentWatch={currentWatch}
+        totalWatches={watches.length}
+        currentWatchData={currentWatchData}
+        watches={watches}
+      />
     </div>
   );
 }
