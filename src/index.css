@@ -13,7 +13,7 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  background: radial-gradient(circle at center, #745b5b 0%, #f0f0f0 70%);
+  background: radial-gradient(circle at center, #ffa9a9 0%, #f0f0f0 70%);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -22,8 +22,45 @@
 }
 
 h1 {
-  text-shadow: 0px 0px 10px rgb(193, 114, 201);
   font-family: "Avenue", sans-serif;
-  font-size: 15.2em;
+  font-size: 11.2em;
   line-height: 1.1;
+}
+
+@media screen and (max-width: 600px) {
+  h1 {
+    font-size: 6em;
+  }
+}
+
+.range-slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: currentColor;
+  cursor: pointer;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2), 0 4px 12px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
+}
+
+.range-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.3), 0 6px 16px rgba(0, 0, 0, 0.5);
+}
+
+.range-slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: currentColor;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2), 0 4px 12px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
+}
+
+.range-slider::-moz-range-thumb:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.3), 0 6px 16px rgba(0, 0, 0, 0.5);
 }
