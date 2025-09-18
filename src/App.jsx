@@ -200,10 +200,7 @@ function App() {
 
             <div className="space-y-4">
               <p className="text-gray-300 text-lg leading-relaxed">
-                Crafted with precision and elegance, this timepiece represents
-                the pinnacle of horological excellence. Every detail has been
-                meticulously designed to create a watch that transcends time
-                itself.
+                {currentWatchData.description}
               </p>
 
               <div className="flex items-center space-x-6">
@@ -212,21 +209,23 @@ function App() {
                 >
                   {currentWatchData.price}
                 </span>
-                <button
-                  className={`px-8 py-3 bg-gradient-to-r ${
-                    currentWatchData.accent.includes("purple")
-                      ? "from-purple-600 to-purple-800"
-                      : currentWatchData.accent.includes("yellow")
-                      ? "from-yellow-600 to-yellow-800"
-                      : currentWatchData.accent.includes("cyan")
-                      ? "from-cyan-600 to-cyan-800"
-                      : currentWatchData.accent.includes("red")
-                      ? "from-red-600 to-red-800"
-                      : "from-pink-600 to-pink-800"
-                  } text-white font-semibold rounded-full hover:scale-105 transition-transform duration-300`}
-                >
-                  DISCOVER MORE
-                </button>
+                <a href={currentWatchData.link} target="_blank">
+                  <button
+                    className={`px-8 py-3 bg-gradient-to-r ${
+                      currentWatchData.accent.includes("purple")
+                        ? "from-purple-600 to-purple-800"
+                        : currentWatchData.accent.includes("yellow")
+                        ? "from-yellow-600 to-yellow-800"
+                        : currentWatchData.accent.includes("cyan")
+                        ? "from-cyan-600 to-cyan-800"
+                        : currentWatchData.accent.includes("red")
+                        ? "from-red-600 to-red-800"
+                        : "from-pink-600 to-pink-800"
+                    } text-white font-semibold rounded-full hover:scale-105 transition-transform duration-300`}
+                  >
+                    DISCOVER MORE
+                  </button>
+                </a>
               </div>
               <div className="border border-white opacity-40"></div>
               <div className="mt-8 space-y-4">

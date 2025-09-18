@@ -2,8 +2,11 @@ export const watches = [
   {
     id: 1,
     name: "Day-Date 40",
-    model: "CE-2024",
-    price: "$2,499",
+    model: "Oyster, 40 mm, oro Everose",
+    price: "USD 67,600",
+    description:
+      "El Rolex Day-Date 40 en oro Everose de 18 quilates refleja lujo y distinción. Con esfera pizarra sombreada y bisel estriado icónico, irradia elegancia atemporal. Su brazalete President aporta máximo confort y refinamiento. Un símbolo de éxito para quienes alcanzan grandes logros.",
+    link: "https://www.rolex.com/es/watches/day-date/m228235-0055",
     image: "../public/img/DayDate/DayDate40.v2.png",
     background:
       " background: radial-gradient(circle at center, #745b5b 0%, #f0f0f0 70%);",
@@ -22,11 +25,14 @@ export const watches = [
   },
   {
     id: 2,
-    name: "ROYAL MASTER",
-    model: "RM-GOLD",
-    price: "$4,999",
-    image: "/placeholder.svg?height=400&width=400&text=Gold+Watch+2",
-    background: "from-amber-900 via-yellow-800 to-amber-900",
+    name: "Land-Dweller 40",
+    model: "Oyster, 40 mm, acero Oystersteel y oro blanco",
+    price: "USD 21,150",
+    description:
+      "El Rolex Land-Dweller 40 combina acero Oystersteel y oro blanco con audacia técnica. Su esfera blanca con motivo “nido de abeja” ofrece elegancia y legibilidad únicas. El bisel estriado en oro y el brazalete Flat Jubilee aportan distinción y confort. Una pieza que refleja innovación, fuerza y sofisticación atemporal.",
+    link: "https://www.rolex.com/es/watches/land-dweller/m127334-0001",
+    image: "../public/img/LandDweller/LandDweller40.png",
+    background: "from-white-900 via-gray-400 to-white-900",
     accent: "text-yellow-400",
     colors: {
       primary: "#eab308", // yellow-500
@@ -34,10 +40,10 @@ export const watches = [
       gradient: "from-yellow-600 to-yellow-800",
     },
     gallery: [
-      "../public/img/DayDate/rolex1-DayDate.png",
-      "../public/img/DayDate/rolex2-DayDate.png",
-      "../public/img/DayDate/rolex3-DayDate.png",
-      "../public/img/DayDate/rolex4-DayDate.png",
+      "../public/img/LandDweller/rolex1-LandDweller.png",
+      "../public/img/LandDweller/rolex2-LandDweller.png",
+      "../public/img/LandDweller/rolex3-LandDweller.png",
+      "../public/img/LandDweller/rolex4-LandDweller.png",
     ],
   },
   {
